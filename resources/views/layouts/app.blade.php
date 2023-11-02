@@ -8,11 +8,12 @@
         @stack('styles')
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
+        @livewireStyles
     </head>
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-black">DevStagram</h1>
+                <a href="{{route('home')}}" class="text-3xl font-black">DevStagram</a>
 
                 {{-- Se usa @auth para validar si esta iniciada la sesion --}}
                 @auth
@@ -48,5 +49,7 @@
         <footer class="mt-10 text-center p-5 font-bold uppercase text-gray-500">
             devstagram - Todos los derechos reservados {{now()->year}}
         </footer>
+
+        @livewireScripts
     </body>
 </html>

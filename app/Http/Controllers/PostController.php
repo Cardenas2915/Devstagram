@@ -16,7 +16,7 @@ class PostController extends Controller
 
     public function index(User $user){
         //Con este metodo consultamos el modelo y llamamos los atributos o registros que tiene el usuario
-        $posts = Post::where('user_id', $user->id)->paginate(4);
+        $posts = Post::where('user_id', $user->id)->latest()->paginate(4);
         
         return view('dashboard', [
             'user' => $user , //con esta variable le pasamos el usuario para utilizarlo en la url

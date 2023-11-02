@@ -17,6 +17,7 @@ class LoginController extends Controller
             'password'=> 'required'
         ]);
 
+        //esta comprobacion es para validar los datos si estan correctos en la base de datos
         if(!auth()->attempt($request->only('email','password'), $request->remember)){
             return back()->with('mensaje', 'credenciales Incorrectas');
         }
